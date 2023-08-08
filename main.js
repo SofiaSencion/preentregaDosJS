@@ -74,6 +74,20 @@ for (let i = 0; i < productos.length; i++) {
     }
 } */
 
+//SORT////////
+
+const productosOrdenados = productos.sort((a, b) => a.nombre.localeCompare(b.nombre))
+
+console.log(productosOrdenados)
+
+
+/* let productosOrdenados = productos.sort(function (a, b){
+    return a.Data.nombre - b.Data.nombre;
+})
+
+console.log(productosOrdenados) */
+///////////////////
+
 alert("Bienvenido a nuestra tienda! A continuación verá nuestra lista de productos")
 
 let todosLosProductos = productos.map((productos) => productos.nombre + " $" + productos.precio)
