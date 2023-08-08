@@ -32,61 +32,25 @@ class Data {
     }
 }
 
-const remera = new Data ("remera", 500, 3, "ropa", 1234)
-const canguro = new Data ("canguro", 1300, 1, "ropa", 567)
-const campera = new Data ("campera", 2000, 5, "ropa", 73264)
-const zapatos = new Data ("zapatos", 5000, 10, "calzado", 7394)
-const pantalon = new Data ("pantalon", 3000, 6, "ropa", 93873)
+function crearProducto(nombre, precio, cantidad, categoria, id) {
+    let producto = new Data(nombre, precio, cantidad, categoria, id)
+    productos.push(producto)
 
-let hola = remera.hacerProducto()
+    return producto
+}
 
-productos.push(remera, canguro, campera, zapatos, pantalon)
+const remera = crearProducto("remera", 500, 3, "ropa", 1234)
+const canguro = crearProducto("canguro", 1300, 1, "ropa", 567)
+const campera = crearProducto("campera", 2000, 5, "ropa", 73264)
+const zapatos = crearProducto("zapatos", 5000, 10, "calzado", 7394)
+const pantalon = crearProducto("pantalon", 3000, 6, "ropa", 93873)
 
-
-//////////////////////////////////////////////HACER SORT//////////////////////////////////////
-
-//console.log(hola)
-
-//console.log(productos)
-
-//const ordenado = productos.sort((a, b) => {
-  //  return a.nombre - b.nombre
-//})
-
-//console.log(ordenado)
-
-//tendria que ser campera, canguro, pantalon, remera, zapatos
-
-//students.sort((firstItem, secondItem) => firstItem.grade - secondItem.grade);
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-// let eleccion = prompt("Gracias por visitar nuestra tienda, por favor elija entre los siguientes productos: Campera, Canguro, Pantalon, remera, zapatos")
-
-/* var productosUsuario = []
-var elegido = ["zapatos", "pantalon"]
-
-for (let i = 0; i < productos.length; i++) {
-    if (productos[i].nombre == elegido) {
-        console.log(productos[i])
-    } else {
-        console.log(productos[i].nombre + " no es " + elegido)
-    }
-} */
 
 //SORT////////
+    const productosOrdenados = productos.sort((a, b) => a.nombre.localeCompare(b.nombre))
+    console.log(productosOrdenados)
 
-const productosOrdenados = productos.sort((a, b) => a.nombre.localeCompare(b.nombre))
-
-console.log(productosOrdenados)
-
-
-/* let productosOrdenados = productos.sort(function (a, b){
-    return a.Data.nombre - b.Data.nombre;
-})
-
-console.log(productosOrdenados) */
-///////////////////
+//////////////
 
 alert("Bienvenido a nuestra tienda! A continuación verá nuestra lista de productos")
 
